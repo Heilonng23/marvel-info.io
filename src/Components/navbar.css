@@ -1,0 +1,23 @@
+ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding-left: 5px;
+}
+button {
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  /* padding: 10px; Adjust padding for button size */
+  margin: 10px 0;
+  padding: 6px 10px;
+  cursor: pointer; /* Add cursor pointer for usability */
+  color: var(--beige); /* Example text color */
+  border-radius: 10px;
+  font-family: var(--robotocondensed);
+  font-size: 20px;
+}
+button:hover {
+  background-color: var(--darkblue); /* Example hover background color */
+  color: white; /* Example hover text color */
+}

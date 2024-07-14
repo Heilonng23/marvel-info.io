@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+:root {
+  --robotoflex: "Roboto Flex", sans-serif;
+  --bangers: "Bangers", system-ui;
+  --oswald: "Oswald", system-ui;
+  --robotocondensed: "Roboto Condensed", sans-serif;
+  --darkred: #780000;
+  --red: #c1121f;
+  --beige: #fdf0d5;
+  --darkblue: #003049;
+  --blue: #669bbc;
+}
+li {
+  list-style: none;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--beige);
+}
+.app-container {
+  display: grid;
+  grid-template-rows: auto 1fr; /* Top navbar and main content take up available vertical space */
+  grid-template-columns: auto 1fr; /* Left vertical navbar and main content */
+  min-height: 100vh; /* Ensure full viewport height */
+}
+
+.top-navbar {
+  grid-row: 1 / 2; /* Top navbar spans the first row */
+  grid-column: 1 / 3; /* Spans across both columns */
+  background-color: var(--darkblue); /* Example background color */
+  color: var(--beige); /* Example text color */
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  font-family: var(--oswald);
+}
+
+.top-navbar p {
+  margin-left: 20px;
+  cursor: pointer;
+}
+.main-content {
+  display: grid;
+  grid-template-rows: 100%; /* Main content takes up remaining vertical space */
+  grid-template-columns: auto 1fr; /* Vertical navbar and content */
+  grid-row: 2 / 3; /* Main content spans the second row */
+  grid-column: 1 / 3; /* Spans across both columns */
+  color: var(--beige); /* Example text color */
+}
+
+.vertical-navbar {
+  grid-row: 1 / 2; /* Vertical navbar spans the first row */
+  background-color: var(--darkred); /* Example background color */
+  grid-column: 1 / 2; /* First column */
+  font-family: var(--oswald);
+  padding: 10px;
+  padding-left: 0;
+  height: 100%;
+  border-right: 2px solid var(--blue);
+}
+
+.content {
+  grid-row: 1 / 2; /* Content spans the first row */
+  grid-column: 2 / 3; /* Second column */
+  padding: 10px;
+  padding-left: 0;
+  color: #003049;
+  font-family: var(--robotoflex);
+}

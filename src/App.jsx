@@ -5,12 +5,13 @@ import { useState } from "react";
 import HorizontalNavbar from "./Components/HorizontalNavbar";
 import Movies from "./Components/Movies";
 import Comics from "./Components/Comics";
+import Summaries from "./Components/Summaries";
 
 function App() {
   const [isCharactersOpen, setIsCharactersOpen] = useState(false);
   const [isMoviesOpen, setIsMoviesOpen] = useState(false);
   const [isComicsOpen, setIsComicsOpen] = useState(false);
-  const totalCharacters = 20; // Define totalCharacters as needed
+  const [isSummaries, setIsSummaries] = useState(false);
 
   return (
     <div className="app-container">
@@ -20,16 +21,14 @@ function App() {
           setIsCharactersOpen={setIsCharactersOpen}
           setIsMoviesOpen={setIsMoviesOpen}
           setIsComicsOpen={setIsComicsOpen}
+          setIsSummaries={setIsSummaries}
         />
 
         <div className="content">
           {isCharactersOpen && <Characters totalCharacters={100} />}
-        </div>
-        <div className="content">
-          {isMoviesOpen && <Movies totalCharacters={totalCharacters} />}
-        </div>
-        <div className="content">
-          {isComicsOpen && <Comics totalCharacters={totalCharacters} />}
+          {isMoviesOpen && <Movies totalCharacters={20} />}
+          {isComicsOpen && <Comics totalCharacters={20} />}
+          {isSummaries && <Summaries totalCharacters={100} />}
         </div>
       </div>
     </div>

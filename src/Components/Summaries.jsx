@@ -22,7 +22,11 @@ function Summaries({ totalCharacters }) {
 
         if (result.data.results) {
           const filteredSeries = result.data.results.filter((series) => {
-            return series.description && series.description.trim().length > 0;
+            return (
+              series.description &&
+              series.description.trim().length > 0 &&
+              series.characters.items.length > 0
+            );
           });
           setSeries(filteredSeries);
         }
@@ -53,7 +57,22 @@ function Summaries({ totalCharacters }) {
                 />{" "}
                 <div>
                   <span>{serie.title}</span>
-                  <p style={{ padding: "4px" }}>{serie.description}</p>
+                  <p style={{ padding: "4px 10px " }}>{serie.description}</p>
+                  {serie.characters.items && <span>Stars: </span>}{" "}
+                  {serie.characters.items
+                    .slice(0, 3)
+                    .map((character, index) => (
+                      <>
+                        <ul key={index}>
+                          <li style={{ padding: "4px 10px " }} key={index}>
+                            {character.name}
+                            {index < serie.characters.items.length - 1
+                              ? ", "
+                              : ""}
+                          </li>
+                        </ul>
+                      </>
+                    ))}{" "}
                 </div>
               </div>
             </li>

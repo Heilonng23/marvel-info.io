@@ -17,6 +17,8 @@
 .summaryWithMovies img {
   max-width: 200px;
   max-height: 200px;
+  max-height: 200px;
+  min-width: 200px;
   border-radius: 20px;
   margin: 10px 5px;
 }

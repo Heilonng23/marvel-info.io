@@ -22,11 +22,7 @@ function Summaries({ totalCharacters }) {
 
         if (result.data.results) {
           const filteredSeries = result.data.results.filter((series) => {
-            return (
-              series.description &&
-              series.description.trim().length > 0 &&
-              series.characters.items.length > 0
-            );
+            return series.description && series.description.trim().length > 0;
           });
           setSeries(filteredSeries);
         }

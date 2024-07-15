@@ -66,6 +66,6 @@ body {
   grid-column: 2 / 3; /* Second column */
   padding: 10px;
   padding-left: 0;
-  color: #003049;
+  color: var(--darkblue);
   font-family: var(--robotoflex);
 }
